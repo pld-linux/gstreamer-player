@@ -5,31 +5,28 @@
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.6.0
+Version:	0.8.0
 Release:	1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
-Source0:	http://dl.sourceforge.net/gstreamer/%{gstname}-%{version}.tar.bz2
-# Source0-md5:	29a19182f1c2e5dc1add2d3828713581
+Source0:	http://gstreamer.freedesktop.org/src/%{gstname}/%{gstname}-%{version}.tar.bz2
+# Source0-md5:	4b67afde07fdcf2bde0e3d9b6699465c
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-desktop.patch
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-GConf-devel >= 0.6.3
-BuildRequires:	gstreamer-plugins-devel >= 0.6.3
-BuildRequires:	gstreamer-play-devel >= 0.6.3
+BuildRequires:	gstreamer-GConf-devel >= 0.8.0
+BuildRequires:	gstreamer-plugins-devel >= 0.8.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	nautilus-devel >= 2.4.0
-Requires:	gstreamer >= 0.6.3
+Requires:	gstreamer >= 0.8.0
 Requires:	gstreamer-GConf
 Requires:	gstreamer-audio-effects
-Requires:	gstreamer-avi
-Requires:	gstreamer-colorspace >= 0.6.3
+Requires:	gstreamer-colorspace >= 0.8.0
 Requires:	gstreamer-gnomevfs
 Requires:	gstreamer-mad
 Requires:	gstreamer-mpeg
-Requires:	gstreamer-play
 Requires:	gstreamer-plugins
 Requires:	gstreamer-vorbis
 Requires:	gstreamer-videosink
