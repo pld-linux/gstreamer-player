@@ -5,7 +5,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Multimedia
 Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
@@ -16,9 +16,10 @@ Requires(post):	/sbin/ldconfig
 Requires(post):	/usr/X11R6/bin/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
-%define		_sysconfdir /etc/X11/GNOME2
+%define		_prefix			/usr/X11R6
+%define		_mandir			%{_prefix}/man
+%define		_sysconfdir 		/etc/X11/GNOME2
+%define		_bonobo_serverdir	/usr/lib/bonobo/servers
 
 %description
 GStreamer Multimedia Player.
@@ -55,7 +56,8 @@ install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	pkgconfigdir=%{_pkgconfigdir} \
+	serverdir=%{_bonobo_serverdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -64,9 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-umask 022
-GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
-/usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
+%gconf_schema_install
 
 %postun	-p /sbin/ldconfig
 
@@ -79,7 +79,7 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
-%{_libdir}/bonobo/servers/*
+%{_bonobo_serverdir}/*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
 %dir %{_datadir}/%{gstname}
@@ -95,4 +95,3 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
 %{_includedir}/%{gstname}-%{version}
-#%{_pkgconfigdir}/*.pc
