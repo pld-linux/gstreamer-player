@@ -46,7 +46,7 @@ Odtwarzacz multimedialny GStreamer.
 Summary:	GStreamer Multimedia Player development files
 Summary(pl):	Pliki programistyczne odtwarzacza multimedialnego GStreamer
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description devel
 GStreamer Multimedia Player development files.
