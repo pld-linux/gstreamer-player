@@ -1,18 +1,22 @@
 
+%define		snap		20030111
 %define 	gstname 	gst-player
 
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.4.2
-Release:	4
+Version:	0.4.1.2
+Release:	1.%{snap}
 License:	GPL
+Epoch:		1
 Group:		X11/Multimedia
-Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
+#Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.bz2
+Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-plugins-devel >= 0.4.2-2
+BuildRequires:	gstreamer-plugins-devel >= 0.5.1
+BuildRequires:	gstreamer-play-devel >= 0.5.1
 BuildRequires:	libgnomeui-devel >= 2.0.5
-BuildRequires:	rpm-build >= 4.1-8.2
+BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,6 +43,13 @@ Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 %setup -q -n %{gstname}-%{version}
 
 %build
+%{__aclocal} -I common/m4
+%{__libtoolize}
+%{__autoheader}
+glib-gettextize --copy --force
+intltoolize --copy --force
+autoconf
+%{__automake}
 %configure
 %{__make}
 
