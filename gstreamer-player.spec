@@ -5,26 +5,26 @@
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.5.1
-Release:	3.1
+Version:	0.6.0
+Release:	1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
-# Source0-md5:	ece8fc2b458bc85e482733dd6f8630b6
+# Source0-md5:	29a19182f1c2e5dc1add2d3828713581
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-GConf-devel >= 0.6.1
-BuildRequires:	gstreamer-plugins-devel >= 0.6.1
-BuildRequires:	gstreamer-play-devel >= 0.6.1
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	gstreamer-GConf-devel >= 0.6.3
+BuildRequires:	gstreamer-plugins-devel >= 0.6.3
+BuildRequires:	gstreamer-play-devel >= 0.6.3
+BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:	nautilus-devel >= 2.3.7-3
-Requires:	gstreamer >= 0.6.1
+BuildRequires:	nautilus-devel >= 2.4.0
+Requires:	gstreamer >= 0.6.3
 Requires:	gstreamer-GConf
 Requires:	gstreamer-audio-effects
 Requires:	gstreamer-avi
-Requires:	gstreamer-colorspace >= 0.6.1
+Requires:	gstreamer-colorspace >= 0.6.3
 Requires:	gstreamer-gnomevfs
 Requires:	gstreamer-mad
 Requires:	gstreamer-mpeg
@@ -60,7 +60,7 @@ Summary:	GStreamer nautilus view
 Summary(pl):	Widok GStreamer dla nautilusa
 Group:		Libraries/Multimedia
 Requires:	gstreamer-player = %{epoch}:%{version}
-Requires:	nautilus >= 2.3.7-3
+Requires:	nautilus >= 2.4.0
 
 %description nautilus
 GStreamer nautilus view for media files.
@@ -73,7 +73,7 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 
 %build
 %configure \
-    --disable-schemas-install
+	--disable-schemas-install
 
 %{__make}
 
