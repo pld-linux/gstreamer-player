@@ -15,6 +15,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_sysconfdir /etc/X11/GNOME2
 
 %description
 GStreamer Multimedia Player.
@@ -28,11 +29,9 @@ Requires:	%{name} = %{version}
 GStreamer Multimedia Player development files.
 
 %prep
-%setup -q
+%setup -q -n %{gstname}-%{version}
 
 %build
-rm -f missing
-./autogen.sh
 %configure
 %{__make}
 
