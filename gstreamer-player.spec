@@ -19,19 +19,19 @@ BuildRequires:	gstreamer-play-devel >= 0.6.1
 BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	nautilus-devel >= 2.2.0
-Requires:		gstreamer-colorspace >= 0.6.1
-Requires:		gstreamer-avi
-Requires:		gstreamer-mpeg
-Requires:		gstreamer-mad
-Requires:		gstreamer-vorbis
-Requires:		gstreamer-oss
-Requires:		gstreamer-xvideosink
-Requires:		gstreamer-gnomevfs
-Requires:		gstreamer-audio-effects
-Requires:		gstreamer-GConf
-Requires:		gstreamer-plugins
-Requires:		gstreamer-play
-Requires:		gstreamer >= 0.6.1
+Requires:	gstreamer-colorspace >= 0.6.1
+Requires:	gstreamer-avi
+Requires:	gstreamer-mpeg
+Requires:	gstreamer-mad
+Requires:	gstreamer-vorbis
+Requires:	gstreamer-oss
+Requires:	gstreamer-xvideosink
+Requires:	gstreamer-gnomevfs
+Requires:	gstreamer-audio-effects
+Requires:	gstreamer-GConf
+Requires:	gstreamer-plugins
+Requires:	gstreamer-play
+Requires:	gstreamer >= 0.6.1
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -106,11 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*.*
 %{_datadir}/application-registry/*
-%{_datadir}/applications/*
 %dir %{_datadir}/%{gstname}
 %dir %{_datadir}/%{gstname}/ui
 %{_datadir}/%{gstname}/ui/*
 %{_datadir}/mime-info/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_mandir}/man?/*
 
