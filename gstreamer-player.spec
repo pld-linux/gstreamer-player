@@ -1,5 +1,5 @@
 
-%define		snap		20030111
+%define		snap		20030122
 %define 	gstname 	gst-player
 
 Summary:	GStreamer Multimedia Player
@@ -13,11 +13,11 @@ Group:		X11/Multimedia
 #Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.bz2
 Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-plugins-devel >= 0.5.1
+BuildRequires:	gstreamer-plugins-devel >= 0.5.2
 BuildRequires:	gstreamer-play-devel >= 0.5.1
 BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gstreamer-colorspace >= 0.5.1
+Requires:	gstreamer-colorspace >= 0.5.2
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
