@@ -5,7 +5,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.4.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Multimedia
 Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
@@ -19,7 +19,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix			/usr/X11R6
 %define		_mandir			%{_prefix}/man
 %define		_sysconfdir 		/etc/X11/GNOME2
-%define		_bonobo_server_dir	/usr/lib/bonobo/servers
 
 %description
 GStreamer Multimedia Player.
@@ -56,8 +55,7 @@ install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir} \
-	serverdir=%{_bonobo_server_dir}
+	pkgconfigdir=%{_pkgconfigdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -79,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
-%{_bonobo_server_dir}/*
+%{_libdir}/bonobo/servers/*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
 %dir %{_datadir}/%{gstname}
