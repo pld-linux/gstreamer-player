@@ -1,0 +1,22 @@
+--- gst-player-0.8.0/configure.ac~	Fri Jul 23 21:51:42 2004
++++ gst-player-0.8.0/configure.ac	Fri Jul 23 21:51:42 2004
+@@ -160,7 +160,7 @@
+ GETTEXT_PACKAGE=gst-player
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Define gettext package])
+-ALL_LINGUAS="nl no"
++ALL_LINGUAS="nb nl"
+ AM_GLIB_GNU_GETTEXT
+ 
+ dnl check for gconftool-2
+--- gst-player-0.8.0/configure~	Fri Jul 23 21:51:47 2004
++++ gst-player-0.8.0/configure	Fri Jul 23 21:51:47 2004
+@@ -20336,7 +20336,7 @@
+ #define GETTEXT_PACKAGE "$GETTEXT_PACKAGE"
+ _ACEOF
+ 
+-ALL_LINGUAS="nl no"
++ALL_LINGUAS="nb nl"
+ 
+ 
+ for ac_header in locale.h
