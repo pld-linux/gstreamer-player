@@ -13,6 +13,7 @@ Group:		X11/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
 # Source0-md5:	29a19182f1c2e5dc1add2d3828713581
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
+Patch0:		%{name}-desktop.patch
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-GConf-devel >= 0.6.3
 BuildRequires:	gstreamer-plugins-devel >= 0.6.3
@@ -70,6 +71,7 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 
 %prep
 %setup -q -n %{gstname}-%{version}
+%patch0 -p1
 
 %build
 %configure \
