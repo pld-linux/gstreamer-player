@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix			/usr/X11R6
 %define		_mandir			%{_prefix}/man
 %define		_sysconfdir 		/etc/X11/GNOME2
-%define		_bonobo_serverdir	/usr/lib/bonobo/servers
+%define		_bonobo_server_dir	/usr/lib/bonobo/servers
 
 %description
 GStreamer Multimedia Player.
@@ -57,7 +57,7 @@ install -d $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir} \
-	serverdir=%{_bonobo_serverdir}
+	serverdir=%{_bonobo_server_dir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
-%{_bonobo_serverdir}/*
+%{_bonobo_server_dir}/*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
 %dir %{_datadir}/%{gstname}
