@@ -12,6 +12,7 @@ Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.4.2-2
 BuildRequires:	libgnomeui-devel >= 2.0.5
+BuildRequires:	rpm-build >= 4.1-7
 Requires(post):	/sbin/ldconfig
 Requires(post):	/usr/X11R6/bin/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
