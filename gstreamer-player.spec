@@ -3,7 +3,7 @@
 
 Summary:	GStreamer Multimedia Player
 Name:		gstreamer-player
-Version:	0.4.0.3
+Version:	0.4.1
 Release:	1
 License:	GPL
 Group:		X11/Multimedia
