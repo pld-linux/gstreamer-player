@@ -6,7 +6,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.8.0
-Release:	1
+Release:	2
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
@@ -14,6 +14,7 @@ Source0:	http://gstreamer.freedesktop.org/src/%{gstname}/%{gstname}-%{version}.t
 # Source0-md5:	4b67afde07fdcf2bde0e3d9b6699465c
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-locale_names.patch
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-GConf-devel >= 0.8.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.0
@@ -69,6 +70,9 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 %prep
 %setup -q -n %{gstname}-%{version}
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 cp /usr/share/automake/config.sub .
