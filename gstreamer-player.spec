@@ -6,7 +6,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.5.1
-Release:	3
+Release:	3.1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
@@ -31,7 +31,7 @@ Requires:	gstreamer-mpeg
 Requires:	gstreamer-play
 Requires:	gstreamer-plugins
 Requires:	gstreamer-vorbis
-Requires:	gstreamer-xvideosink
+Requires:	gstreamer-videosink
 Requires:	gstreamer-audiosink-oss
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
