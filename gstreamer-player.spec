@@ -58,7 +58,7 @@ Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 Summary:        GStreamer nautilus view
 Summary(pl):	Widok GStreamer dla nautilusa
 Group:          Libraries/Multimedia
-Requires:       gstreamer-player = %{version}
+Requires:       gstreamer-player = %{epoch}:%{version}
 Requires:       nautilus >= 2.2.0
 
 %description nautilus
