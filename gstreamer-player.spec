@@ -5,7 +5,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Multimedia
 Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
@@ -60,6 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
+umask 022
 GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 
