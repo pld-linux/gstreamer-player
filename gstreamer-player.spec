@@ -10,7 +10,7 @@ Release:	1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
-Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/gstreamer/%{gstname}-%{version}.tar.bz2
 # Source0-md5:	29a19182f1c2e5dc1add2d3828713581
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-desktop.patch
