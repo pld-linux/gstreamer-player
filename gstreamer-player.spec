@@ -6,7 +6,7 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.5.1
-Release:	1
+Release:	2
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
@@ -16,22 +16,22 @@ Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.6.1
 BuildRequires:	gstreamer-play-devel >= 0.6.1
-BuildRequires:	libgnomeui-devel >= 2.0.5
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:	nautilus-devel >= 2.2.0
-Requires:	gstreamer-colorspace >= 0.6.1
-Requires:	gstreamer-avi
-Requires:	gstreamer-mpeg
-Requires:	gstreamer-mad
-Requires:	gstreamer-vorbis
-Requires:	gstreamer-oss
-Requires:	gstreamer-xvideosink
-Requires:	gstreamer-gnomevfs
-Requires:	gstreamer-audio-effects
-Requires:	gstreamer-GConf
-Requires:	gstreamer-plugins
-Requires:	gstreamer-play
+BuildRequires:	nautilus-devel >= 2.3.7-3
 Requires:	gstreamer >= 0.6.1
+Requires:	gstreamer-GConf
+Requires:	gstreamer-audio-effects
+Requires:	gstreamer-avi
+Requires:	gstreamer-colorspace >= 0.6.1
+Requires:	gstreamer-gnomevfs
+Requires:	gstreamer-mad
+Requires:	gstreamer-mpeg
+Requires:	gstreamer-oss
+Requires:	gstreamer-play
+Requires:	gstreamer-plugins
+Requires:	gstreamer-vorbis
+Requires:	gstreamer-xvideosink
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -59,7 +59,7 @@ Summary:        GStreamer nautilus view
 Summary(pl):	Widok GStreamer dla nautilusa
 Group:          Libraries/Multimedia
 Requires:       gstreamer-player = %{epoch}:%{version}
-Requires:       nautilus >= 2.2.0
+Requires:       nautilus >= 2.3.7-3
 
 %description nautilus
 GStreamer nautilus view for media files.
