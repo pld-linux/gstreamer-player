@@ -32,7 +32,7 @@ Requires:	gstreamer-play
 Requires:	gstreamer-plugins
 Requires:	gstreamer-vorbis
 Requires:	gstreamer-videosink
-Requires:	gstreamer-audiosink-oss
+Requires:	gstreamer-audiosink
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
