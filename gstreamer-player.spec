@@ -11,7 +11,7 @@ License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
-# Source0-md5: ece8fc2b458bc85e482733dd6f8630b6
+# Source0-md5:	ece8fc2b458bc85e482733dd6f8630b6
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.6.1
@@ -55,11 +55,11 @@ GStreamer Multimedia Player development files.
 Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 
 %package nautilus
-Summary:        GStreamer nautilus view
+Summary:	GStreamer nautilus view
 Summary(pl):	Widok GStreamer dla nautilusa
-Group:          Libraries/Multimedia
-Requires:       gstreamer-player = %{epoch}:%{version}
-Requires:       nautilus >= 2.3.7-3
+Group:		Libraries/Multimedia
+Requires:	gstreamer-player = %{epoch}:%{version}
+Requires:	nautilus >= 2.3.7-3
 
 %description nautilus
 GStreamer nautilus view for media files.
