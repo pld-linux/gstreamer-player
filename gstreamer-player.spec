@@ -55,13 +55,17 @@ GStreamer Multimedia Player development files.
 Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 
 %package nautilus
-Summary:        GStreamer nautilus view.
+Summary:        GStreamer nautilus view
+Summary(pl):	Widok GStreamer dla nautilusa
 Group:          Libraries/Multimedia
 Requires:       gstreamer-player = %{version}
 Requires:       nautilus >= 2.2.0
 
 %description nautilus
 GStreamer nautilus view for media files.
+
+%description nautilus -l pl
+Widok GStreamer do nautilusa dla plików multimedialnych.
 
 %prep
 %setup -q -n %{gstname}-%{version}
@@ -80,7 +84,8 @@ intltoolize --copy --force
 %install
 rm -rf $RPM_BUILD_ROOT
 
-export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 install -d $RPM_BUILD_ROOT
 
 %{__make} install \
@@ -113,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{gstname}/ui/*
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
-%{_mandir}/*
+%{_mandir}/man?/*
 
 %files devel
 %defattr(644,root,root,755)
@@ -121,6 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/%{gstname}-%{version}
 
 %files nautilus
+%defattr(644,root,root,755)
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
