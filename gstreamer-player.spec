@@ -76,7 +76,7 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %config %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*
-%attr(755,root,root) %{_libdir}/*.la
+%{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
 %{_libdir}/bonobo/servers/*
@@ -93,6 +93,6 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
-%attr(755,root,root) %{_libdir}/*.la
+%{_libdir}/*.la
 %{_includedir}/%{gstname}-%{version}
 #%{_pkgconfigdir}/*.pc
