@@ -6,19 +6,19 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.4.1.2
-Release:	1.%{snap}
+Release:	2.%{snap}
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
 #Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.bz2
 Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-plugins-devel >= 0.5.2
-BuildRequires:	gstreamer-play-devel >= 0.5.2
+BuildRequires:	gstreamer-plugins-devel >= 0.6.0
+BuildRequires:	gstreamer-play-devel >= 0.6.0
 BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	nautilus-devel >= 2.2.0
-Requires:	gstreamer-colorspace >= 0.5.2
+Requires:	gstreamer-colorspace >= 0.6.0
 Requires:       gstreamer-avi
 Requires:       gstreamer-mpeg
 Requires:       gstreamer-mad
@@ -31,7 +31,7 @@ Requires:       gstreamer-GConf
 Requires:       gstreamer-plugins
 Requires:       gstreamer-play
 Requires:       gstreamer-GConf
-Requires:       gstreamer >= 0.5.2
+Requires:       gstreamer >= 0.6.0
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
