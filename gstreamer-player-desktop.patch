@@ -1,7 +1,9 @@
-diff -urN gst-player-0.8.0.orig/gst-player.desktop gst-player-0.8.0/gst-player.desktop
---- gst-player-0.8.0.orig/gst-player.desktop	2004-04-14 23:16:24.552089216 +0200
-+++ gst-player-0.8.0/gst-player.desktop	2004-04-14 23:17:01.927407304 +0200
-@@ -3,9 +3,13 @@
+diff -ur gst-player-0.8.0.orig/gst-player.desktop gst-player-0.8.0/gst-player.desktop
+--- gst-player-0.8.0.orig/gst-player.desktop	2004-03-17 13:22:22.000000000 +0100
++++ gst-player-0.8.0/gst-player.desktop	2004-07-29 02:51:02.492575128 +0200
+@@ -1,17 +1,20 @@
+ [Desktop Entry]
+ Encoding=UTF-8
  Name=Video Player
 +Name[nb]=Medieavspiller
  Name[nl]=Mediaspeler
@@ -16,4 +18,10 @@ diff -urN gst-player-0.8.0.orig/gst-player.desktop gst-player-0.8.0/gst-player.d
  Terminal=false
  Type=Application
 +Categories=GTK;GNOME;AudioVideo;Player;
+ Icon=gst-player-48.png
+-Categories=Application;AudioVideo;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gstreamer
+ X-GNOME-Bugzilla-Component=gst-player
+ StartupNotify=true
 +# vi: encoding=utf-8
