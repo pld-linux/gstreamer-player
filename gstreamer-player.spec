@@ -5,13 +5,13 @@
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.4.1.2
-Release:	2.%{snap}
+Version:	0.5.0
+Release:	1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
-#Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.bz2
-Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
+Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.gz
+#Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.6.0
 BuildRequires:	gstreamer-play-devel >= 0.6.0
@@ -30,7 +30,6 @@ Requires:       gstreamer-audio-effects
 Requires:       gstreamer-GConf
 Requires:       gstreamer-plugins
 Requires:       gstreamer-play
-Requires:       gstreamer-GConf
 Requires:       gstreamer >= 0.6.0
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
@@ -71,25 +70,19 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 %setup -q -n %{gstname}-%{version}
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
-%{__aclocal} -I common/m4
-%{__libtoolize}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
-%configure
+%configure \
+    --disable-schemas-install
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
-export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 install -d $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 %find_lang %{name} --with-gnome --all-name
 
