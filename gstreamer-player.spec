@@ -71,6 +71,7 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 %patch0 -p1
 
 %build
+cp /usr/share/automake/config.sub .
 %configure \
 	--disable-schemas-install
 
