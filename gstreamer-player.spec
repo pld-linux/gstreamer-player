@@ -2,6 +2,7 @@
 %define gstname gst-player
 
 Summary:	GStreamer Multimedia Player
+Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.4.1
 Release:	1
@@ -11,6 +12,8 @@ Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.4.0.2
 BuildRequires:	libgnomeui-devel >= 2.0.5
+Requires(post):	/sbin/ldconfig
+Requires(post):	/usr/X11R6/bin/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -20,13 +23,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GStreamer Multimedia Player.
 
+%description -l pl
+Odtwarzacz multimedialny GStreamer.
+
 %package devel
 Summary:	GStreamer Multimedia Player development files
+Summary(pl):	Pliki programistyczne odtwarzacza multimedialnego GStreamer
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
 GStreamer Multimedia Player development files.
+
+%description devel -l pl
+Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 
 %prep
 %setup -q -n %{gstname}-%{version}
@@ -50,11 +60,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
-%{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
+GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
+/usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 
-%postun	
-/sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -66,13 +75,15 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
 %{_libdir}/bonobo/servers/*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
+%dir %{_datadir}/%{gstname}
+%dir %{_datadir}/%{gstname}/ui
 %{_datadir}/%{gstname}/ui/*
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/%{gstname}-%{version}
 %{_pkgconfigdir}/*.pc
