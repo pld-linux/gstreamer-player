@@ -1,0 +1,18 @@
+diff -urN aaa/gst-player-0.6.0/gst-player.desktop gst-player-0.6.0/gst-player.desktop
+--- aaa/gst-player-0.6.0/gst-player.desktop	2003-09-13 20:27:11.000000000 +0200
++++ gst-player-0.6.0/gst-player.desktop	2003-12-12 18:59:45.000000000 +0100
+@@ -2,11 +2,13 @@
+ Encoding=UTF-8
+ Name=Video Player
+ Name[no]=Medieavspiller
++Name[pl]=Odtwarzacz Filmów
+ Comment=Plays movies and music
+ Comment[nl]=Speelt films en muziek
+ Comment[no]=Speelt films en muziek
++Comment[pl]=Odtwarza filmy i muzykê
+ Exec=gst-player
+-Terminal=0
++Terminal=false
+ Type=Application
+ Icon=gst-player-48.png
+ Categories=Application;AudioVideo;
