@@ -79,16 +79,11 @@ Widok GStreamer do nautilusa dla plików multimedialnych.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 %find_lang %{name} --with-gnome --all-name
-
-# Clean out files that should not be part of the rpm.
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -104,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog
 %config %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %{_datadir}/application-registry/*
 %dir %{_datadir}/%{gstname}
 %dir %{_datadir}/%{gstname}/ui
@@ -116,7 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/%{gstname}-%{version}
 
 %files nautilus
