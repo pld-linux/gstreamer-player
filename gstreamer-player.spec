@@ -1,14 +1,13 @@
 
-%define snap 20020920
 %define gstname gst-player
 
 Summary:	GStreamer Multimedia Player
 Name:		gstreamer-player
-Version:	0.4.0.1
-Release:	1.cvs.%{snap}
+Version:	0.4.0.3
+Release:	1
 License:	GPL
 Group:		X11/Multimedia
-Source0:	%{gstname}-%{snap}.tar.gz
+Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
 URL:		http://gstreamer.net/
 BuildRequires:	gstreamer-plugins-devel >= 0.4.0.2
 BuildRequires:	libgnomeui-devel >= 2.0.5
@@ -29,7 +28,7 @@ Requires:	%{name} = %{version}
 GStreamer Multimedia Player development files.
 
 %prep
-%setup -q -n %{gstname}
+%setup -q
 
 %build
 rm -f missing
