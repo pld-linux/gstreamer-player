@@ -1,16 +1,16 @@
 
-%define gstname gst-player
+%define 	gstname 	gst-player
 
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.4.1
-Release:	2
+Version:	0.4.2
+Release:	1
 License:	GPL
 Group:		X11/Multimedia
 Source0:	http://gstreamer.net/releases/current/src/%{gstname}-%{version}.tar.gz
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-plugins-devel >= 0.4.0.2
+BuildRequires:	gstreamer-plugins-devel >= 0.4.2-2
 BuildRequires:	libgnomeui-devel >= 2.0.5
 Requires(post):	/sbin/ldconfig
 Requires(post):	/usr/X11R6/bin/gconftool-2
@@ -77,6 +77,8 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*
 %attr(755,root,root) %{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/%{gstname}-control
+%attr(755,root,root) %{_libdir}/%{gstname}-view
 %{_libdir}/bonobo/servers/*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
@@ -84,11 +86,13 @@ GCONF_CONFIG_SOURCE="`/usr/X11R6/bin/gconftool-2 --get-default-source`" \
 %dir %{_datadir}/%{gstname}/ui
 %{_datadir}/%{gstname}/ui/*
 %{_datadir}/mime-info/*
+%{_datadir}/gnome-2.0/ui/*
 %{_pixmapsdir}/*
+%{_mandir}/*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/%{gstname}-%{version}
-%{_pkgconfigdir}/*.pc
+#%{_pkgconfigdir}/*.pc
