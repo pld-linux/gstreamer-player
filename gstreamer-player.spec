@@ -17,6 +17,7 @@ BuildRequires:	gstreamer-plugins-devel >= 0.5.1
 BuildRequires:	gstreamer-play-devel >= 0.5.1
 BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	rpm-build >= 4.1-10
+Requires:	gstreamer-colorspace >= 0.5.1
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
