@@ -1,15 +1,19 @@
 diff -urN gst-player-0.8.0.orig/gst-player.desktop gst-player-0.8.0/gst-player.desktop
 --- gst-player-0.8.0.orig/gst-player.desktop	2004-04-14 23:16:24.552089216 +0200
 +++ gst-player-0.8.0/gst-player.desktop	2004-04-14 23:17:01.927407304 +0200
-@@ -3,9 +3,11 @@
+@@ -3,9 +3,13 @@
  Name=Video Player
++Name[nb]=Medieavspiller
  Name[nl]=Mediaspeler
- Name[no]=Medieavspiller
+-Name[no]=Medieavspiller
 +Name[pl]=Odtwarzacz Filmów
  Comment=Plays movies and music
++Comment[nb]=Speelt films en muziek
  Comment[nl]=Speelt films en muziek
- Comment[no]=Speelt films en muziek
+-Comment[no]=Speelt films en muziek
 +Comment[pl]=Odtwarza filmy i muzykę
  Exec=gst-player
  Terminal=false
  Type=Application
++Categories=GTK;GNOME;AudioVideo;Player;
++# vi: encoding=utf-8
