@@ -5,32 +5,32 @@
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
-Version:	0.5.0
+Version:	0.5.1
 Release:	1
 License:	GPL
 Epoch:		1
 Group:		X11/Multimedia
-Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.gz
+Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
-BuildRequires:	gstreamer-plugins-devel >= 0.6.0
-BuildRequires:	gstreamer-play-devel >= 0.6.0
+BuildRequires:	gstreamer-plugins-devel >= 0.6.1
+BuildRequires:	gstreamer-play-devel >= 0.6.1
 BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	nautilus-devel >= 2.2.0
-Requires:	gstreamer-colorspace >= 0.6.0
-Requires:       gstreamer-avi
-Requires:       gstreamer-mpeg
-Requires:       gstreamer-mad
-Requires:       gstreamer-vorbis
-Requires:       gstreamer-oss
-Requires:       gstreamer-xvideosink
-Requires:       gstreamer-gnomevfs
-Requires:       gstreamer-audio-effects
-Requires:       gstreamer-GConf
-Requires:       gstreamer-plugins
-Requires:       gstreamer-play
-Requires:       gstreamer >= 0.6.0
+Requires:		gstreamer-colorspace >= 0.6.1
+Requires:		gstreamer-avi
+Requires:		gstreamer-mpeg
+Requires:		gstreamer-mad
+Requires:		gstreamer-vorbis
+Requires:		gstreamer-oss
+Requires:		gstreamer-xvideosink
+Requires:		gstreamer-gnomevfs
+Requires:		gstreamer-audio-effects
+Requires:		gstreamer-GConf
+Requires:		gstreamer-plugins
+Requires:		gstreamer-play
+Requires:		gstreamer >= 0.6.1
 Requires(post):	/sbin/ldconfig
 Requires(post):	%{_bindir}/gconftool-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog
 %config %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/*.so.*.*
 %{_datadir}/application-registry/*
 %{_datadir}/applications/*
 %dir %{_datadir}/%{gstname}
