@@ -47,6 +47,10 @@ Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
+
 install -d $RPM_BUILD_ROOT
 
 %{__make} install \
