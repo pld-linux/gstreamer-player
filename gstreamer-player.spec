@@ -6,10 +6,10 @@ Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.8.0
-Release:	4
+Release:	5
 License:	GPL
 Epoch:		1
-Group:		X11/Multimedia
+Group:		X11/Applications/Multimedia
 Source0:	http://gstreamer.freedesktop.org/src/%{gstname}/%{gstname}-%{version}.tar.bz2
 # Source0-md5:	4b67afde07fdcf2bde0e3d9b6699465c
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
