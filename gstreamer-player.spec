@@ -14,6 +14,7 @@ Source0:	http://dl.sf.net/gstreamer/%{gstname}-%{version}.tar.bz2
 # Source0-md5:	ece8fc2b458bc85e482733dd6f8630b6
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 URL:		http://gstreamer.net/
+BuildRequires:	gstreamer-GConf-devel >= 0.6.1
 BuildRequires:	gstreamer-plugins-devel >= 0.6.1
 BuildRequires:	gstreamer-play-devel >= 0.6.1
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
