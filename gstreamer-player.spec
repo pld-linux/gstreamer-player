@@ -1,16 +1,18 @@
-
+#
+# Conditional build:
+%bcond_with	nautilus	# don't build GStreamer nautilus view
+#
 %define		snap		20030127
 %define 	gstname 	gst-player
-
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.8.0
-Release:	6
+Release:	7
 License:	GPL
 Epoch:		1
 Group:		X11/Applications/Multimedia
-Source0:	http://gstreamer.freedesktop.org/src/%{gstname}/%{gstname}-%{version}.tar.bz2
+Source0:	http://gstreamer.freedesktop.org/src/gst-player/%{gstname}-%{version}.tar.bz2
 # Source0-md5:	4b67afde07fdcf2bde0e3d9b6699465c
 #Source0:	%{gstname}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-desktop.patch
@@ -20,7 +22,7 @@ BuildRequires:	gstreamer-GConf-devel >= 0.8.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:	nautilus-devel >= 2.4.0
+%{?with_nautilus:BuildRequires:	nautilus-devel >= 2.4.0}
 Requires:	gstreamer >= 0.8.0
 Requires:	gstreamer-GConf
 Requires:	gstreamer-audio-effects
@@ -79,7 +81,6 @@ mv -f po/{no,nb}.po
 cp /usr/share/automake/config.sub .
 %configure \
 	--disable-schemas-install
-
 %{__make}
 
 %install
@@ -121,9 +122,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/%{gstname}-%{version}
 
+%if %{with nautilus}
 %files nautilus
 %defattr(644,root,root,755)
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/%{gstname}-control
 %attr(755,root,root) %{_libdir}/%{gstname}-view
 %{_datadir}/gnome-2.0/ui/%{gstname}-view-ui.xml
+%endif
