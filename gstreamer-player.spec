@@ -3,7 +3,7 @@
 %bcond_with	nautilus	# don't build GStreamer nautilus view
 #
 %define		snap		20030127
-%define 	gstname 	gst-player
+%define		gstname 	gst-player
 Summary:	GStreamer Multimedia Player
 Summary(pl):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
