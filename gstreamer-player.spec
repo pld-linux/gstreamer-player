@@ -18,6 +18,7 @@ Source0:	http://gstreamer.freedesktop.org/src/gst-player/%{gstname}-%{version}.t
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-locale_names.patch
 URL:		http://gstreamer.net/
+BuildRequires:	automake
 BuildRequires:	gstreamer-GConf-devel >= 0.8.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
