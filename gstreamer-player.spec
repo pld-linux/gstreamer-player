@@ -111,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{gstname}/ui
 %{_datadir}/%{gstname}/ui/*
 %{_datadir}/mime-info/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_mandir}/man?/*
 
