@@ -4,7 +4,7 @@
 #
 %define		gstname 	gst-player
 Summary:	GStreamer Multimedia Player
-Summary(pl.UTF-8):   Odtwarzacz multimedialny GStreamer
+Summary(pl.UTF-8):	Odtwarzacz multimedialny GStreamer
 Name:		gstreamer-player
 Version:	0.8.0
 Release:	8
@@ -46,7 +46,7 @@ Odtwarzacz multimedialny GStreamer.
 
 %package devel
 Summary:	GStreamer Multimedia Player development files
-Summary(pl.UTF-8):   Pliki programistyczne odtwarzacza multimedialnego GStreamer
+Summary(pl.UTF-8):	Pliki programistyczne odtwarzacza multimedialnego GStreamer
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
 
@@ -58,7 +58,7 @@ Pliki programistyczne odtwarzacza multimedialnego GStreamer.
 
 %package nautilus
 Summary:	GStreamer nautilus view
-Summary(pl.UTF-8):   Widok GStreamer dla nautilusa
+Summary(pl.UTF-8):	Widok GStreamer dla nautilusa
 Group:		Libraries/Multimedia
 Requires:	gstreamer-player = %{epoch}:%{version}
 Requires:	nautilus >= 2.4.0
